@@ -1,7 +1,4 @@
-# Dokumentasi Proyek
-
-Semua jawaban untuk pertanyaan 1-4 berada di folder yang sama dan dapat dilihat dengan navigasi folder.
-
+# Semua jawaban untuk pertanyaan 1-4 berada di folder yang sama dan dapat dilihat dengan navigasi folder.
 ## Daftar Akun Pengguna
 
 Daftar akun yang bisa digunakan:
