@@ -1,5 +1,4 @@
-# Nama : Daniel Richard Ransun
-Daftar Akun :
+Daftar Akun untuk login:
 -Staff 1
  email : staff1@example.com
  pass : 12345678
