@@ -1,36 +1,37 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ __('Edit Provinsi') }}
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Edit Log Harian') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                <form action="{{ route('provinsi.update', $provinsi->kode) }}" method="POST">
-                    @csrf
-                    @method('PUT')
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <form method="POST" action="{{ route('log.update', $log->id) }}">
+                        @csrf
+                        @method('PUT')
 
-                    <div class="form-group">
-                        <label for="kode">Kode Provinsi</label>
-                        <input type="text" name="kode" id="kode" value="{{ old('kode', $provinsi->kode) }}" class="form-control" required readonly>
-                        @error('kode')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+                        <div>
+                            <x-input-label for="deskripsi" :value="__('Deskripsi')" />
+                            <x-text-input id="deskripsi" class="block mt-1 w-full" type="text" name="deskripsi" value="{{ old('deskripsi', $log->deskripsi) }}" required autofocus />
+                            <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
+                        </div>
+                        
+                        <div class="mt-4">
+                            <x-primary-button>
+                                {{ __('Update') }}
+                            </x-primary-button>
 
-                    <div class="form-group">
-                        <label for="nama">Nama Provinsi</label>
-                        <input type="text" name="nama" id="nama" value="{{ old('nama', $provinsi->nama) }}" class="form-control" required>
-                        @error('nama')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mt-3">Simpan Perubahan</button>
-                    <a href="{{ route('provinsi.index') }}" class="btn btn-secondary mt-3">Batal</a>
-                </form>
+                            <x-primary-button>
+                                <a href="{{ route('log.index') }}">
+                                    {{ __('Cancel') }}
+                                </a>
+                            </x-primary-button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -21,6 +21,12 @@
                             <x-primary-button>
                                 {{ __('Simpan') }}
                             </x-primary-button>
+
+                            <x-primary-button>
+                                <a href="{{ route('log.index') }}">
+                                    {{ __('Cancel') }}
+                                </a>
+                            </x-primary-button>
                         </div>
                     </form>
                 </div>
